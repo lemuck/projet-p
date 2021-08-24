@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  lesson: one
+  date: 2021-08-24
+
+two:
+  user: two
+  lesson: two
+  date: 2021-08-24
