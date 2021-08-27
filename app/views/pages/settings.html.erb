@@ -11,10 +11,54 @@
 
     <div class="div">
       <ol>
-        <li>cd ~/code/$GITHUB_USERNAME</li>
-        <li>rails new first-rails-app --skip-active-storage --skip-action-mailbox</li>
+        <li>cd first-rails-app</li>
+        <li>git add . && git commit -m "rails new"</li>
+        <li>git remote -v <br>
+          # => No remotes yet! Cannot push!</li>
+        <li>gh repo create</li>
+        <li>git remote -v <br>
+          # => An `origin` remote is now set!</li>
+        <li>git push origin master</li>
+      </ol>
+    </div>
+
+    <div class="div">
+      <ol>
+        <h5>devise</h5>
+        <li>gem 'devise'</li>
+        <li>bundle install</li>
+        <li>rails generate devise:install</li>
+        <li>config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }</li>
+        <li>root to: "pages#home"</li>
+        <li> Ensure you have flash messages in app/views/layouts/application.html.erb. <br> <xmp><p class="notice"><%= notice %></p></xmp>
+        <xmp><p class="alert"><%= alert %></p></xmp></li>
+        <li># config/initializers/devise.rb <br> config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'</li>
+        <li>rails generate devise User</li>
+        <li>rails db:migrate</li>
+        <li> <xmp><!-- app/views/layouts/application.html.erb --></xmp> <br> render 'shared/flashes' </li>
+        <li> <xmp><!-- app/views/shared/_flashes.html.erb --></xmp> <br> <a href="https://kitt.lewagon.com/camps/654/lectures/05-Rails%2F06-Airbnb-Devise#/0/4/3" target="_blank">if notice ...</a> </li>
+        <li>rails g devise:views</li>
+      </ol>
+    </div>
+
+    <div class="div">
+      <ol>
+        <li>rails generate controller pages</li>
+        <li>get 'about', to: 'pages#about'</li>
+        <li>def about</li>
+        <li># app/controllers/application_controller.rb <br> before_action :authenticate_user!</li>
+        <li># app/controllers/pages_controller.rb <br> skip_before_action :authenticate_user!, only: :home</li>
+        <a href="https://kitt.lewagon.com/camps/654/lectures/05-Rails%2F06-Airbnb-Devise#/0/5/3" target="_blank">ADDING ATTRIBUTES TO USER</a>
       </ol>
     </div>
   </div>
   <%= link_to "Home", root_path %>
 </div>
+
+
+
+
+
+
+
+
